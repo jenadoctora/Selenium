@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 public class Triangle {
 
@@ -9,7 +8,7 @@ public class Triangle {
 
     }
 
-    public static void areaOfATriangle (int a, int b, int c ) {
+    public static void areaOfATriangle (int a, int b, int c) {
 
         int perimeter = (a + b + c)/2;
 
