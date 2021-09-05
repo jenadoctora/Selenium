@@ -1,4 +1,5 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +11,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.sql.Driver;
 
 public class DeviantArtTests {
 
@@ -24,12 +24,13 @@ public class DeviantArtTests {
     @BeforeEach
     void setupBrowser(){
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         webDriverWait = new WebDriverWait(driver, 5);
         authorization();
     }
 
     @Test
-    void addNote() throws InterruptedException {
+    void addNote() {
         Actions actions = new Actions(driver);
         WebElement menuElement = driver.findElement(By.xpath("//div/button[@role='link']"));
         actions.moveToElement(menuElement).perform();
@@ -43,14 +44,26 @@ public class DeviantArtTests {
         driver.findElement(By.xpath("//label[text()='Subject']/following-sibling::input")).sendKeys("Testtest");
 
         driver.findElement(By.xpath("//textarea")).click();
-        Thread.sleep(5000);
+
         driver.findElement(By.xpath("//textarea")).sendKeys("New Note");
 
         driver.findElement(By.xpath("//a[@class='send_note']")).click();
+        assert true;
+    }
+
+    @Test
+    void addNewElementInCollections () {
+        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
+
+    }
+
+    @AfterEach
+    void tearDown() {
+        driver.quit();
     }
 
     public static void authorization() {
-        driver.get("https://www.deviantart.com");
+        driver.get(BASE_URL);
         driver.findElement(By.xpath("//a[text()='Log in']")).click();
         driver.findElement(By.name("username")).sendKeys("Applanatest1");
         driver.findElement(By.name("password")).click();
