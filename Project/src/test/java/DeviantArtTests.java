@@ -78,7 +78,6 @@ public class DeviantArtTests {
 
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='In Favourites']")));
         assert true;
-
     }
 
     @Test
@@ -94,12 +93,7 @@ public class DeviantArtTests {
 
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Watching']")));
         assert true;
-
-
-
     }
-
-
 
     @AfterEach
     void tearDown() {
