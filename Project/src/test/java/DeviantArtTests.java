@@ -79,7 +79,27 @@ public class DeviantArtTests {
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='In Favourites']")));
         assert true;
 
-        }
+    }
+
+    @Test
+    void subscribeToUser () {
+        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
+        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
+        vars.get(2).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-hook='user_watch_button']")));
+        driver.findElement(By.xpath("//button[@data-hook='user_watch_button']")).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Watching']")));
+        assert true;
+
+
+
+    }
+
+
 
     @AfterEach
     void tearDown() {
