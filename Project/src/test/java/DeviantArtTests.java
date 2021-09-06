@@ -11,6 +11,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+
 
 public class DeviantArtTests {
 
@@ -55,7 +57,29 @@ public class DeviantArtTests {
     void addNewElementInCollections () {
         driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
 
-    }
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
+        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
+        vars.get(4).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Add to Favourites']")));
+        driver.findElement(By.xpath("//span[text()='Add to Favourites']")).click();
+
+        Actions actions = new Actions(driver);
+        WebElement loginElement = driver.findElement(By.xpath("//button[text()='User Menu']"));
+        actions.moveToElement(loginElement).perform();
+
+        driver.findElement(By.xpath("//a[@data-username='Applanatest1']")).click();
+
+        driver.findElement(By.xpath("//a[text()='Favourites']")).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a/div/img")));
+        List<WebElement> varsFavourites = driver.findElements(By.xpath("//a/div/img"));
+        varsFavourites.get(0).click();
+
+        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='In Favourites']")));
+        assert true;
+
+        }
 
     @AfterEach
     void tearDown() {
