@@ -25,47 +25,12 @@ public class HomePage extends BaseView{
     public WebElement notesButton;
 
     @Step("Нажать на записки")
-    public HomePage clickOnNotes() {
+    public InboxPage clickOnNotes() {
         notesButton.click();
-        return this;
+        return new InboxPage(driver);
     }
 //
-//    @FindBy(xpath = "//a[contains(text(),'New Note')]")
-//    public WebElement newNote;
 //
-//    @Step("Добавить новую заметку")
-//    public HomePage clickNewNote() {
-//        newNote.click();
-//        return this;
-//    }
-
-    @FindBy(xpath = "//label[text()='Subject']/following-sibling::input")
-    public WebElement fieldTo;
-
-    @Step("Заполнить поле Кому")
-    public HomePage fillTo(String to) {
-        fieldTo.sendKeys(to);
-        return this;
-    }
-
-    @FindBy(xpath = "//textarea")
-    public WebElement textArea;
-
-    @Step("Заполнить поле")
-    public HomePage fillTextArea(String text) {
-        textArea.click();
-        textArea.sendKeys(text);
-        return this;
-    }
-
-    @FindBy(xpath = "//a[@class='send_note']")
-    public WebElement noteSend;
-
-    @Step("Отправить записку")
-    public HomePage sendNote() {
-        noteSend.click();
-        return this;
-    }
 
 
 }

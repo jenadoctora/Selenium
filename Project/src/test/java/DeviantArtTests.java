@@ -55,20 +55,20 @@ public class DeviantArtTests {
 
     @Test
     void addNewElementInCollections () {
-        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
+//        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
 
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
-        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
-        vars.get(4).click();
+//        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
+//        vars.get(4).click();
 
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Add to Favourites']")));
-        driver.findElement(By.xpath("//span[text()='Add to Favourites']")).click();
+//        driver.findElement(By.xpath("//span[text()='Add to Favourites']")).click();
 
-        Actions actions = new Actions(driver);
-        WebElement loginElement = driver.findElement(By.xpath("//button[text()='User Menu']"));
-        actions.moveToElement(loginElement).perform();
+//        Actions actions = new Actions(driver);
+//        WebElement loginElement = driver.findElement(By.xpath("//button[text()='User Menu']"));
+//        actions.moveToElement(loginElement).perform();
 
-        driver.findElement(By.xpath("//a[@data-username='Applanatest1']")).click();
+//        driver.findElement(By.xpath("//a[@data-username='Applanatest1']")).click();
 
         driver.findElement(By.xpath("//a[text()='Favourites']")).click();
 
