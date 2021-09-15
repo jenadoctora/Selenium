@@ -10,6 +10,7 @@ public class BaseView {
 
     public BaseView(WebDriver driver) {
         this.driver = driver;
+        driver.manage().window().maximize();
         webDriverWait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }

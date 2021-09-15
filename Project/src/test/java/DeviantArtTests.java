@@ -37,10 +37,10 @@ public class DeviantArtTests {
 //        WebElement menuElement = driver.findElement(By.xpath("//div/button[@role='link']"));
 //        actions.moveToElement(menuElement).perform();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Notes')]")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'Notes')]")));
 //        driver.findElement(By.xpath("//a[contains(text(),'Notes')]")).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'New Note')]")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'New Note')]")));
 //        driver.findElement(By.xpath("//a[contains(text(),'New Note')]")).click();
 
 //        driver.findElement(By.xpath("//label[text()='Subject']/following-sibling::input")).sendKeys("Testtest");
@@ -57,11 +57,11 @@ public class DeviantArtTests {
     void addNewElementInCollections () {
 //        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
 //        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
 //        vars.get(4).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Add to Favourites']")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Add to Favourites']")));
 //        driver.findElement(By.xpath("//span[text()='Add to Favourites']")).click();
 
 //        Actions actions = new Actions(driver);
@@ -70,28 +70,28 @@ public class DeviantArtTests {
 
 //        driver.findElement(By.xpath("//a[@data-username='Applanatest1']")).click();
 
-        driver.findElement(By.xpath("//a[text()='Favourites']")).click();
+//        driver.findElement(By.xpath("//a[text()='Favourites']")).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a/div/img")));
-        List<WebElement> varsFavourites = driver.findElements(By.xpath("//a/div/img"));
-        varsFavourites.get(0).click();
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a/div/img")));
+//        List<WebElement> varsFavourites = driver.findElements(By.xpath("//a/div/img"));
+//        varsFavourites.get(0).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='In Favourites']")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='In Favourites']")));
         assert true;
     }
 
     @Test
     void subscribeToUser () {
-        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
+//        driver.findElement(By.xpath("//a[@aria-label='DeviantArt - Home']")).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
-        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
-        vars.get(2).click();
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[@data-hook='deviation_link']/div/img")));
+//        List<WebElement> vars = driver.findElements(By.xpath("//a[@data-hook='deviation_link']/div/img"));
+//        vars.get(2).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-hook='user_watch_button']")));
-        driver.findElement(By.xpath("//button[@data-hook='user_watch_button']")).click();
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-hook='user_watch_button']")));
+//        driver.findElement(By.xpath("//button[@data-hook='user_watch_button']")).click();
 
-        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Watching']")));
+//        webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Watching']")));
         assert true;
     }
 

@@ -44,8 +44,8 @@ public class LoginPage extends BaseView{
     }
 
     @Step("Клик на кнопку логина")
-    public HomePage clickLoginButton() {
+    public HeaderMenu clickLoginButton() {
         loginButton.click();
-        return new HomePage(driver);
+        return new HeaderMenu(driver);
     }
 }

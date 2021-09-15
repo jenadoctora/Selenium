@@ -1,9 +1,11 @@
 package DeviantArt;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 
@@ -13,6 +15,7 @@ public class InboxPage extends BaseView{
         super(driver);
     }
 
+//    webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'New Note')]")));
     @FindBy(xpath = "//a[contains(text(),'New Note')]")
     public WebElement newNote;
 
@@ -48,23 +51,5 @@ public class InboxPage extends BaseView{
     public InboxPage sendNote() {
         noteSend.click();
         return this;
-    }
-    //
-    @FindBy(xpath = "//a[@aria-label='DeviantArt - Home']")
-    public WebElement home;
-
-    @Step("Вернуться домой")
-    public HomePage returnHome() {
-       home.click();
-       return new HomePage(driver);
-    }
-
-    @FindBy(xpath = "//a[@data-hook='deviation_link']/div/img")
-    public List<WebElement> images;
-
-    @Step("Выбрать одну картинку")
-    public ImagePage choosePicture() {
-        images.get(5).click();
-        return new ImagePage(driver);
     }
 }
