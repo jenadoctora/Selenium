@@ -15,7 +15,6 @@ public class InboxPage extends BaseView{
         super(driver);
     }
 
-//    webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'New Note')]")));
     @FindBy(xpath = "//a[contains(text(),'New Note')]")
     public WebElement newNote;
 

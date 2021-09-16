@@ -3,9 +3,7 @@ package DeviantArt;
 import io.qameta.allure.Description;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DeviantPageTest extends BaseTest{
 
@@ -18,10 +16,10 @@ public class DeviantPageTest extends BaseTest{
                 .goToLoginPage()
                 .fillInputLogin("Applanatest1")
                 .fillInputPassword("Student2020!")
-                .clickLoginButton()
-                .headerMenu.moveToNotes();
+                .clickLoginButton();
 
         new HomePage(driver)
+                .moveToNotes()
                 .clickOnNotes();
 
         new InboxPage(driver)
@@ -41,15 +39,15 @@ public class DeviantPageTest extends BaseTest{
                 .goToLoginPage()
                 .fillInputLogin("Applanatest1")
                 .fillInputPassword("Student2020!")
-                .clickLoginButton()
-                .headerMenu.returnHome();
+                .clickLoginButton();
 
         new HomePage(driver)
+                .returnHome()
                 .choosePicture();
 
         new ImagePage(driver)
                 .addToFavourites()
-                .headerMenu.openUserMenu();
+                .openUserMenu();
 
         new AccountPage(driver)
                 .openAccount()
@@ -68,14 +66,13 @@ public class DeviantPageTest extends BaseTest{
                 .goToLoginPage()
                 .fillInputLogin("Applanatest1")
                 .fillInputPassword("Student2020!")
-                .clickLoginButton()
-                .headerMenu.returnHome();
+                .clickLoginButton();
 
         new HomePage(driver)
+                .returnHome()
                 .choosePicture();
 
-        new ImagePage(driver)
-                .pushWatchButton();
+        new ImagePage(driver).pushWatchButton();
 
         webDriverWait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Watching']")));
         assert true;
